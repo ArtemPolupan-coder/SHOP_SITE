@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Сторінка реєстрації
+{% endblock %}
+
+{% block links %}
+    <link rel="stylesheet" href="static/reg_static/reg.css">
+{% endblock %}
+
+{% block header %}
+    <a href="/auth"><p class="header-p" >AUTHORIZATION</p></a>
+{% endblock %}
+
+{% block content %}
+
+<div class="main">
+    <form action="" method="post">
+        <div class="field">
+            <p>Login</p>
+            <input type="text">
+        </div>
+        <div class="field">
+            <p>Email</p>
+            <input type="text">
+        </div>
+        <div class="field">
+            <p>Password</p>
+            <input type="text">
+        </div>
+        <div class="field">
+            <p>Password confirmation</p>
+            <input type="text">
+        </div>
+        <button>SEND</button>
+    </form>
+</div>
+{% endblock %}

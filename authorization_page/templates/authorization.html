@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block title %}
+    Сторінка авторизації
+{% endblock %}
+
+{% block links %}
+    <link rel="stylesheet" href="static/auth_static/auth.css">
+{% endblock %}
+
+{% block header %}
+    <a href="/reg"><p class="header-p" >REGISTRATION</p></a>
+{% endblock %}
+
+{% block content %}
+    <div class="main">
+        <form action="" method="post">
+            <div class="field">
+                <p>Login or email</p>
+                <input type="text">
+            </div>
+            <div class="field">
+                <p>Password</p>
+                <input type="text">
+            </div>
+            <button>SEND</button>
+        </form>
+        
+    </div>
+    <div class="cover-modal">
+    </div>
+    <div class="modal">
+        <p>CONFIRMED</p>
+    </div>
+    
+{% endblock %}
+
+{% block script %}
+<script>
+    let button = document.querySelector('button')
+    let modal = document.querySelector('.modal')
+    let cover = document.querySelector('.cover-modal')
+    // button.addEventListener('click', () => {
+    //     modal.style.display = 'flex';
+    //     cover.style.display = 'flex';
+    // })
+    $(document).ready(() => {
+        $("button").click(function(){
+            modal.style.display = 'flex';
+            cover.style.display = 'flex';
+            $.ajax({
+                url : $('.url').val(),
+                type: 'GET',
+                // data: {category: $(this).val()},
+
+                success: (response) => {
+                    modal.style.display = 'flex';
+                    cover.style.display = 'flex';
+                }
+                // url : $('.url').val(),
+                // type: 'POST',
+
+                // success: (response) => {
+                //     modal.style.display = 'flex';
+                //     cover.style.display = 'flex';
+                // }
+            })      
+        })
+    })
+    // let button = document.querySelector('button')
+    // let modal = document.querySelector('.modal')
+    // let cover = document.querySelector('.cover-modal')
+    // button.addEventListener('click', () => {
+    //     modal.style.display = 'flex';
+    //     cover.style.display = 'flex';
+    // })
+</script>
+{% endblock %}
